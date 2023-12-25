@@ -41,12 +41,6 @@ class LanguageActivity : BaseActivity<ActivityLanguageBinding>() {
 
     override fun createView() {
         getDataLanguage()
-        if (!intent.getBooleanExtra(OPEN_FROM_MAIN, false)) {
-            initAds()
-        } else {
-            binding.frAds.visibility = View.GONE
-            binding.imgBack.visibility = View.VISIBLE
-        }
         binding.imgConfirm.setOnClickListener {
             changeLanguage()
             Log.d("TAGGG", "---------->  getLangueCode: $languageCode")
@@ -56,26 +50,6 @@ class LanguageActivity : BaseActivity<ActivityLanguageBinding>() {
         }
 
     }
-
-    private fun initAds() {
-        if (AppPurchase.getInstance().isPurchased) {
-            binding.frAds.visibility = View.GONE
-        } else {
-            App.getStorageCommon()?.nativeAdLanguage?.observe(this) {
-                if (it != null) {
-                    AperoAd.getInstance().populateNativeAdView(
-                        this,
-                        it,
-                        binding.frAds,
-                        binding.includeNative.shimmerContainerNative
-                    )
-                } else {
-                    binding.frAds.visibility = View.GONE
-                }
-            }
-        }
-    }
-
 
     private fun initAdapter(){
         languageAdapter =  LanguageAdapter(this, object : LanguageAdapter.OnLanguageClickListener{

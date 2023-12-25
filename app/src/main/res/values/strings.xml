@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BaseProject</string>
+    <string name="app_name">Step counter</string>
     <string name="this_action_can_contain_ad">This action can contain ad</string>
     <string name="facebook_app_id">1234</string>
     <string name="language_english" translatable="false">English</string>

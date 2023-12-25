@@ -48,26 +48,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
     override fun onResume() {
         super.onResume()
-        AppUpdateManager.getInstance(this).checkNewAppVersionState(this)
 
     }
 
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == AppUpdate.REQ_CODE_VERSION_UPDATE) {
-            if (resultCode == Activity.RESULT_OK) {
-                AppOpenManager.getInstance().disableAppResume()
-            } else {
-                if (AppUpdateManager.getInstance(this).getStyleUpdate() == AppUpdateManager.STYLE_FORCE_UPDATE) {
-                    AppOpenManager.getInstance().disableAppResume()
-                } else {
-                    AppOpenManager.getInstance().enableAppResume()
-                }
-            }
-            AppUpdateManager.getInstance(this).onCheckResultUpdate(requestCode, resultCode) {
-                AppOpenManager.getInstance().disableAppResume()
-            }
-        }
-    }
 }
