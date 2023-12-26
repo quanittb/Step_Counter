@@ -35,6 +35,7 @@ abstract class BaseSplashActivity<V : ViewBinding> : BaseActivity<V>() {
         super.onCreate(savedInstanceState)
         wakeUpScreen()
         configUpdate()
+        showNextScreen()
     }
 
     @SuppressLint("InvalidWakeLockTag")

@@ -1,7 +1,6 @@
 package com.mobiai.app.ui.activity
 
 
-import android.util.Log
 import com.mobiai.R
 import com.mobiai.base.basecode.storage.SharedPreferenceUtils
 import com.mobiai.base.basecode.ui.activity.splash.BaseSplashActivity
@@ -13,7 +12,7 @@ class SplashActivity() : BaseSplashActivity<ActivitySplashBinding>() {
 
     override fun getViewBinding(): ActivitySplashBinding = ActivitySplashBinding.inflate(layoutInflater)
     override fun createView() {
-        openNextScreen()
+
     }
 
     override fun openNextScreen() {

@@ -5,11 +5,7 @@ import android.content.Intent
 import android.content.res.Resources
 import android.os.Build
 import android.util.Log
-import android.view.View
-import com.ads.control.ads.AperoAd
-import com.ads.control.billing.AppPurchase
 import com.mobiai.R
-import com.mobiai.app.App
 import com.mobiai.app.adapter.LanguageAdapter
 import com.mobiai.base.basecode.language.Language
 import com.mobiai.base.basecode.language.LanguageUtil
